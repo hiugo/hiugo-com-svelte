@@ -11,7 +11,14 @@
 :root {
   --font-code: Code, monospace;
   --font-code-bold: CodeBold, monospace;
-  --black: #1a1a1a;
+
+  --black: #131313;
+  --white: #e4e4e4;
+  --primary: #7dfb91;
+  --secondary: #fadb4d;
+  --light-grey: #7c7c7c;
+  --grey: #2e2d2d;
+  --dark-grey: #1a1919;
 }
 
 html,
@@ -23,7 +30,8 @@ body {
 }
 
 body {
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
   margin: 0;
   font-family: var(--font-code);
   display: flex;

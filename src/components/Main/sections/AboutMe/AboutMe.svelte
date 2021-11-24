@@ -1,5 +1,6 @@
 <script>
   import { Role } from "./components/Role";
+  import { Emoji } from "./components/Emoji";
   import { roles, loves } from "../../../../data";
 
   const allItems = [...roles, ...loves];
@@ -41,13 +42,11 @@
     </p>
     <div class="emojis-wrapper">
       {#each allItems as item}
-        <span
-          class="emoji {selected === item.id ? 'selected' : ''}"
-          on:mouseover={() => (selected = item.id)}
-          on:focus={() => (selected = item.id)}
-          on:mouseout={() => (selected = null)}
-          on:blur={() => (selected = null)}>{item.emoji}</span
-        >
+        <Emoji
+          {item}
+          isSelected={item.id === selected}
+          on:hover={handleHover}
+        />
       {/each}
     </div>
   </div>
@@ -55,7 +54,7 @@
 
 <style>
   .wrapper {
-    background-color: honeydew;
+    background-color: var(--black);
     padding: 16px;
   }
 
@@ -73,27 +72,5 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-  }
-
-  .emoji {
-    padding: 0 8px;
-    transition: font-size 300ms;
-    cursor: default;
-    user-select: none;
-  }
-
-  .emoji.selected {
-    font-size: 48px;
-  }
-
-  @media screen and (max-width: 360px) {
-    .emoji {
-      font-size: 16px;
-      padding: 0 4px;
-    }
-
-    .emoji.selected {
-      font-size: 32px;
-    }
   }
 </style>

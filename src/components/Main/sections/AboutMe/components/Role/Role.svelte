@@ -35,6 +35,7 @@
     cursor: pointer;
     text-decoration: underline;
     white-space: nowrap;
+    color: var(--primary);
   }
 
   .no-spacing {

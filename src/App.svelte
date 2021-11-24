@@ -4,6 +4,6 @@
   import { Footer } from "./components/Footer";
 </script>
 
-<Header />
+<!-- <Header /> -->
 <Main />
-<Footer />
+<!-- <Footer /> -->
